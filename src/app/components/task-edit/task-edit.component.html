@@ -1,1 +1,38 @@
-<p>task-edit works!</p>
+<div class="mt-3" *ngIf="task">
+  <form (ngSubmit)="onUpdate()">
+    <div class="mb-3">
+      <label class="form-label fw-bold">Task Title</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="task.title" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-bold">Description</label>
+      <textarea class="form-control" name="description" [(ngModel)]="task.description" rows="3"></textarea>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="form-label fw-bold">Due Date</label>
+        <input type="date" class="form-control" name="dueDate" [(ngModel)]="task.dueDate" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label class="form-label fw-bold">Priority</label>
+        <select class="form-select" name="priority" [(ngModel)]="task.priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label class="form-label fw-bold">Status</label>
+        <select class="form-select" name="status" [(ngModel)]="task.status">
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100 mt-2">Update Changes</button>
+  </form>
+</div>
