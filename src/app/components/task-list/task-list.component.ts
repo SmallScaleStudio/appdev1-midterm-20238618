@@ -22,11 +22,27 @@ export class TaskListComponent implements OnInit {
   onDelete(id: number): void {
     if (confirm('Are you sure you want to delete this task?')) {
       this.taskService.deleteTask(id);
-      this.tasks = this.taskService.getTasks(); // Refresh list
+      this.tasks = this.taskService.getTasks();
     }
   }
 
   onToggle(id: number): void {
     this.taskService.toggleStatus(id);
   }
+
+taskIdToDelete: number | null = null;
+
+
+prepareDelete(id: number): void {
+  this.taskIdToDelete = id;
+}
+
+
+confirmDelete(): void {
+  if (this.taskIdToDelete !== null) {
+    this.taskService.deleteTask(this.taskIdToDelete);
+    this.tasks = this.taskService.getTasks(); 
+    this.taskIdToDelete = null;
+  }
+}
 }
