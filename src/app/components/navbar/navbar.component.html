@@ -1,22 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
   <div class="container">
-    <a class="navbar-brand fw-bold" routerLink="/">TaskFlow</a>
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <span class="fw-bold text-info">TaskFlow</span>
+      <span class="badge bg-secondary ms-2" style="font-size: 0.6rem;">MIDTERM v1.0</span>
+    </a>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/tasks" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <i class="bi bi-list-task"></i> View Tasks
-          </a>
+          <a class="nav-link" routerLink="/tasks" routerLinkActive="active">View Tasks</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/tasks/new" routerLinkActive="active">
-            <i class="bi bi-plus-circle"></i> Add Task
+          <a class="nav-link btn btn-info text-dark ms-lg-2 mt-2 mt-lg-0" routerLink="/tasks/new">
+            + New Task
           </a>
         </li>
       </ul>
+      <span class="navbar-text ms-lg-3 d-none d-lg-block">
+        <small class="text-muted">ID: 20238618</small>
+      </span>
     </div>
   </div>
 </nav>
