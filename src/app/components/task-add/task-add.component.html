@@ -1,1 +1,46 @@
-<p>task-add works!</p>
+<div class="card shadow-sm border-0">
+  <div class="card-header bg-primary text-white">
+    <h4 class="mb-0">Create New Task</h4>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label fw-bold">Task Title</label>
+        <input type="text" class="form-control" name="title" [(ngModel)]="newTask.title" required placeholder="Enter task name">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-bold">Description</label>
+        <textarea class="form-control" name="description" [(ngModel)]="newTask.description" rows="3"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label fw-bold">Due Date</label>
+          <input type="date" class="form-control" name="dueDate" [(ngModel)]="newTask.dueDate" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label class="form-label fw-bold">Priority</label>
+          <select class="form-select" name="priority" [(ngModel)]="newTask.priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label class="form-label fw-bold">Status</label>
+          <select class="form-select" name="status" [(ngModel)]="newTask.status">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end gap-2 mt-3">
+        <button type="button" class="btn btn-light" routerLink="/tasks">Cancel</button>
+        <button type="submit" class="btn btn-primary px-4">Save Task</button>
+      </div>
+    </form>
+  </div>
+</div>
