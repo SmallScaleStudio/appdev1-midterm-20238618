@@ -5,7 +5,7 @@ import { Task } from '../models/task.model';
   providedIn: 'root'
 })
 export class TaskService {
-  // Seed Data: 3+ tasks with varied values
+
   private tasks: Task[] = [
     { id: 1, title: 'Fix Layout Issues', description: 'Fix the navbar on mobile', dueDate: '2026-03-25', status: 'In Progress', priority: 'High' },
     { id: 2, title: 'Update Documentation', description: 'Write the README.md', dueDate: '2026-03-26', status: 'Pending', priority: 'Medium' },
